@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Peter's Gallery</title>
-  <link rel="stylesheet" href="/static/css/main.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MDKI ENTERPRISE</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 <body>
-  <div class="header">
-    <h1>Peter's Gallery from Kisumu</h1>
-  </div>
-  <div class="container">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
-      <h3>Sunset in Kisumu</h3>
-      <p>Beautiful evening</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba">
-      <h3>Mountains</h3>
-      <p>Learning Flask</p>
-    </div>
-  </div>
-  <div class="footer">Made by Pr © 2026</div>
+<nav>👕 MDKI ENTERPRISE <span style="font-size:14px;">Mtumba Quality</span></nav>
+
+<div class="hero">
+<h1>WELCOME TO MDKI ENTERPRISE</h1>
+<p>We deal with selling mtumba clothes - quality at affordable prices</p>
+<p><b>Jeans • T-shirts • Ankle socks • Hoodie</b></p>
+<a href="https://wa.me/254754707433201?text=Hello MDKI, I want to buy clothes" class="btn">Order on WhatsApp</a>
+</div>
+
+<h2 class="section-title">Available Clothes</h2>
+<div class="grid">
+{% for p in products %}
+<div class="card">
+<img src="{{ p.img }}">
+<h3>{{ p.name }}</h3>
+<p class="price">{{ p.price }}</p>
+<a href="https://wa.me/254754707433201?text=Hello MDKI, I want {{ p.name }} at {{ p.price }}" class="order-btn">Order via WhatsApp</a>
+</div>
+{% endfor %}
+</div>
+
+<div class="footer">
+<h2>Order Now!</h2>
+<p>WhatsApp: <b>075470743301</b></p>
+<p>Email: <b>mdkiimports@gmail.com</b></p>
+<p style="margin-top:20px;font-size:20px;">Welcome All! 🙏</p>
+<p>Delivery countrywide in Kenya</p>
+</div>
 </body>
-  </html>
+</html>
